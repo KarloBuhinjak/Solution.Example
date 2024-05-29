@@ -1,4 +1,6 @@
+using System.Net;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace FootballApp.Controllers
 {
@@ -13,12 +15,15 @@ namespace FootballApp.Controllers
         };
         
         [HttpPost]
-        public ActionResult<FootballPlayer> Post([FromBody] FootballPlayer player)
+        public HttpResponseMessage Post([FromBody] FootballPlayer player)
         {
-            player.Id = Players.Count + 1; 
+            player.Id = Players.Max(p => p.Id) + 1; 
             Players.Add(player);
-            return Ok(player);
-
+    
+            HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
+            response.Content = new StringContent("Player added successfully");
+    
+            return response;
         }
         
         [HttpGet]
