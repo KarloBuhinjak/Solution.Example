@@ -15,16 +15,52 @@ namespace FootballApp.Controllers
         [HttpPost]
         public ActionResult<FootballPlayer> Post(FootballPlayer player)
         {
-            Console.WriteLine(player.Name);
-            player.Id = Players.Count + 1; // Automatski dodijeli ID novom igraču
+            player.Id = Players.Count + 1; 
             Players.Add(player);
-            return CreatedAtAction(nameof(Get), new { id = player.Id }, player);
+            return Ok(player);
+
         }
         
         [HttpGet]
-        public IEnumerable<FootballPlayer> Get()
+        public IActionResult GetAllPlayers()
         {
-            return Players;
+            return Ok(Players);
+        }
+        
+        [HttpGet("{id}")]
+        public IActionResult GetPlayerById(int id)
+        {
+            foreach (var player in Players)
+            {
+                if (player.Id == id)
+                {
+                    return Ok(player); 
+                }
+            }
+
+            return NotFound();
+        }
+        
+        [HttpDelete("{id}")]
+        public IActionResult DeletePlayer(int id)
+        {
+            FootballPlayer playerToRemove = null;
+            foreach (var player in Players)
+            {
+                if (player.Id == id)
+                {
+                    playerToRemove = player;
+                    break;
+                }
+            }
+
+            if (playerToRemove == null)
+            {
+                return NotFound(); 
+            }
+
+            Players.Remove(playerToRemove);
+            return NoContent(); 
         }
         
         
