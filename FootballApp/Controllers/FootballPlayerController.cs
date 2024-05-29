@@ -13,7 +13,7 @@ namespace FootballApp.Controllers
         };
         
         [HttpPost]
-        public ActionResult<FootballPlayer> Post(FootballPlayer player)
+        public ActionResult<FootballPlayer> Post([FromBody] FootballPlayer player)
         {
             player.Id = Players.Count + 1; 
             Players.Add(player);
@@ -35,6 +35,39 @@ namespace FootballApp.Controllers
                 if (player.Id == id)
                 {
                     return Ok(player); 
+                }
+            }
+
+            return NotFound();
+        }
+        
+        [HttpPut("{id}")]
+        public IActionResult UpdatePlayer(int id, [FromBody] FootballPlayer updatedPlayer)
+        {
+            
+            foreach (var player in Players)
+            {
+                if (player.Id == id)
+                {
+                    if (updatedPlayer.Name != null)
+                    {
+                        player.Name = updatedPlayer.Name;
+                    }
+                    if (updatedPlayer.Age != 0) // Ako je poslana vrijednost za dob
+                    {
+                        player.Age = updatedPlayer.Age;
+                    }
+                    if (updatedPlayer.Position != null)
+                    {
+                        player.Position = updatedPlayer.Position;
+                    }
+                    if (updatedPlayer.Club != null)
+                    {
+                        player.Club = updatedPlayer.Club;
+                    }
+
+                    return Ok(player);
+
                 }
             }
 

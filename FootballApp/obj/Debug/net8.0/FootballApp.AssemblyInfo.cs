@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FootballApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+45613737b5221a23adfa8c8528bf72a1f8c07e40")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+10d4976a6f94daba2cbfc07de3e752608b224b92")]
 [assembly: System.Reflection.AssemblyProductAttribute("FootballApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FootballApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
