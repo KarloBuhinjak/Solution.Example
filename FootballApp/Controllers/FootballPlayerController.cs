@@ -24,6 +24,11 @@ namespace FootballApp.Controllers
         [HttpGet]
         public IActionResult GetAllPlayers()
         {
+            if (Players == null || Players.Count == 0)
+            {
+                return NoContent();
+            }
+
             return Ok(Players);
         }
         
@@ -53,7 +58,7 @@ namespace FootballApp.Controllers
                     {
                         player.Name = updatedPlayer.Name;
                     }
-                    if (updatedPlayer.Age != 0) // Ako je poslana vrijednost za dob
+                    if (updatedPlayer.Age != 0) 
                     {
                         player.Age = updatedPlayer.Age;
                     }
@@ -93,7 +98,7 @@ namespace FootballApp.Controllers
             }
 
             Players.Remove(playerToRemove);
-            return NoContent(); 
+            return Ok(playerToRemove);
         }
         
         
