@@ -10,20 +10,27 @@ namespace FootballApp.Controllers
     {
         private static readonly List<FootballPlayer> Players = new List<FootballPlayer>
         {
-            new FootballPlayer { Id = 1, Name = "Messi", Age = 34, Position = "Forward", Club = "FC Barcelona" },
-            new FootballPlayer { Id = 2, Name = "Ronaldo", Age = 36, Position = "Forward", Club = "Manchester United" }
+            
         };
         
         [HttpPost]
-        public HttpResponseMessage Post([FromBody] FootballPlayer player)
+        public IActionResult Post([FromBody] FootballPlayer player)
         {
-            player.Id = Players.Max(p => p.Id) + 1; 
+            if (player == null)
+            {
+                return BadRequest("Player is null");
+            }
+
+            if (Players == null || !Players.Any())
+            {
+                player.Id = 1;
+            }
+            else
+            {
+                player.Id = Players.Max(p => p.Id) + 1;
+            }
             Players.Add(player);
-    
-            HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
-            response.Content = new StringContent("Player added successfully");
-    
-            return response;
+            return Ok(new { message = "Player added successfully", player });
         }
         
         [HttpGet]
@@ -38,7 +45,7 @@ namespace FootballApp.Controllers
         }
         
         [HttpGet("{id}")]
-        public IActionResult GetPlayerById(int id)
+        public IActionResult GetPlayer(int id)
         {
             foreach (var player in Players)
             {
@@ -73,6 +80,7 @@ namespace FootballApp.Controllers
                     }
                     if (updatedPlayer.Club != null)
                     {
+                        //Console.WriteLine(updatedPlayer.);
                         player.Club = updatedPlayer.Club;
                     }
 
