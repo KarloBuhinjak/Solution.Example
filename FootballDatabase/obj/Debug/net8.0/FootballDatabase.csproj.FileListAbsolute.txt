@@ -32,3 +32,4 @@
 /Users/karlobuhinjak/Desktop/Solution.Example/FootballDatabase/obj/Debug/net8.0/FootballDatabase.pdb
 /Users/karlobuhinjak/Desktop/Solution.Example/FootballDatabase/obj/Debug/net8.0/FootballDatabase.genruntimeconfig.cache
 /Users/karlobuhinjak/Desktop/Solution.Example/FootballDatabase/obj/Debug/net8.0/ref/FootballDatabase.dll
+/Users/karlobuhinjak/Desktop/Solution.Example/FootballDatabase/bin/Debug/net8.0/Npgsql.dll

@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "fjFBr9f0ayTjtZWTOniKyUbQRQlCa1YgzOWKMM+JKtebCHgxvba604n+EaIaNQkVFCO7SWBOD6JOZOPrqPR5/A==",
+  "dgSpecHash": "v21r9dPpY0wEjWJp1o7osXdpGSxFKW3GLF3Xp+YI3y3s0zZuBJIf0mcCZa/5kUg615YJVCzJCH2fnae9AcmQrQ==",
   "success": true,
   "projectFilePath": "/Users/karlobuhinjak/Desktop/Solution.Example/FootballDatabase/FootballDatabase.csproj",
   "expectedPackageFiles": [
     "/Users/karlobuhinjak/.nuget/packages/microsoft.aspnetcore.openapi/8.0.5/microsoft.aspnetcore.openapi.8.0.5.nupkg.sha512",
     "/Users/karlobuhinjak/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/karlobuhinjak/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "/Users/karlobuhinjak/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
     "/Users/karlobuhinjak/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/Users/karlobuhinjak/.nuget/packages/npgsql/8.0.3/npgsql.8.0.3.nupkg.sha512",
     "/Users/karlobuhinjak/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "/Users/karlobuhinjak/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "/Users/karlobuhinjak/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
