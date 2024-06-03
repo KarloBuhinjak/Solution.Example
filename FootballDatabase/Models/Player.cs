@@ -8,5 +8,6 @@ namespace FootballDatabase
         public string Position { get; set; }
         public Guid ClubId { get; set; }
         
+        
     }
 }
